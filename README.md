@@ -11,7 +11,7 @@ Wayfarer is a polished, local-first travel planning dashboard built for the Pers
 - Save / unsave trips, edit or regenerate a plan, search and filter trips, share, and export an itinerary as JSON.
 - `localStorage` persistence so a reviewer can create a trip, reload the page and keep it.
 - FastAPI endpoints at `/api/health`, `/api/destinations` and `/api/itineraries/generate` ready for Supabase / Groq integration.
-- Scenic destination artwork is CSS/SVG based, so the demo does not depend on fragile third-party image URLs.
+- Scenic local destination photography for Paris, Tokyo, Kyoto, Lisbon, Bali and the Amalfi Coast, with gradient fallbacks when a photo is not available.
 
 ## Run the frontend
 

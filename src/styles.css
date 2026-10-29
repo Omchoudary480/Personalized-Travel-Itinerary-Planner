@@ -116,7 +116,25 @@ em { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
 /* Scenic art */
 .destination-art { position: relative; overflow: hidden; isolation: isolate; color: white; background: #809ba0; }
 .destination-art > * { position: absolute; }
+.destination-art.photo-art { background-repeat: no-repeat; background-position: center; background-size: cover; }
+.destination-art.photo-art::after { position: absolute; z-index: 6; inset: 0; background: linear-gradient(180deg, rgba(13, 30, 32, .08), rgba(13, 31, 33, .48)); content: ''; pointer-events: none; }
+.photo-art.scene-tokyo { background-position: center 44%; }
+.photo-art.scene-kyoto { background-position: center 50%; }
+.photo-art.scene-lisbon { background-position: center 52%; }
+.photo-art.scene-paris { background-position: center 48%; }
+.photo-art .scene-glow,
+.photo-art .scene-moon,
+.photo-art .scene-cloud,
+.photo-art .scene-tower,
+.photo-art .scene-pagoda,
+.photo-art .scene-palm,
+.photo-art .scene-tram,
+.photo-art .scene-hills { display: none; }
+.photo-art .scene-grain { opacity: .08; }
+.photo-mini { background-position: center; background-size: cover; background-repeat: no-repeat; }
+.summary-scene.photo-art > span { z-index: 8; }
 .scene-paris, .itinerary-cover.scene-paris { background: linear-gradient(145deg, #7d8bb6 0%, #aab9c9 43%, #e6c99f 100%); }
+.scene-tokyo, .itinerary-cover.scene-tokyo { background: linear-gradient(145deg, #263d68 0%, #9c5265 48%, #efad70 100%); }
 .scene-kyoto, .itinerary-cover.scene-kyoto { background: linear-gradient(145deg, #4b6d78 0%, #9a8a85 43%, #e3ad72 100%); }
 .scene-bali, .itinerary-cover.scene-bali { background: linear-gradient(145deg, #1a7671 0%, #63a88e 42%, #d7b271 100%); }
 .scene-lisbon { background: linear-gradient(145deg, #536f90 0%, #bd7e68 52%, #edbd72 100%); }

@@ -13,16 +13,29 @@ export const destinationCatalog = [
     country: 'Japan',
     subtitle: 'Temples, tea houses & hidden lanes',
     className: 'scene-kyoto',
+    photo: '/destinations/kyoto.jpg',
     emoji: '⛩️',
     color: '#b9574a',
     tags: ['Culture', 'Slow travel'],
     blurb: 'A gentle rhythm of gardens, lantern-lit streets and unforgettable local flavours.',
   },
   {
+    city: 'Tokyo',
+    country: 'Japan',
+    subtitle: 'Neon streets & quiet rituals',
+    className: 'scene-tokyo',
+    photo: '/destinations/tokyo.jpg',
+    emoji: '🗼',
+    color: '#b9574a',
+    tags: ['City energy', 'Food'],
+    blurb: 'A high-low mix of electric neighbourhoods, tiny restaurants and peaceful gardens.',
+  },
+  {
     city: 'Lisbon',
     country: 'Portugal',
     subtitle: 'Golden light on every corner',
     className: 'scene-lisbon',
+    photo: '/destinations/lisbon.jpg',
     emoji: '🚋',
     color: '#d17b3f',
     tags: ['Food', 'City break'],
@@ -33,6 +46,7 @@ export const destinationCatalog = [
     country: 'Indonesia',
     subtitle: 'Island days, made your way',
     className: 'scene-bali',
+    photo: '/destinations/bali.jpg',
     emoji: '🌴',
     color: '#4c8c83',
     tags: ['Wellness', 'Nature'],
@@ -43,6 +57,7 @@ export const destinationCatalog = [
     country: 'Italy',
     subtitle: 'A postcard around every bend',
     className: 'scene-amalfi',
+    photo: '/destinations/amalfi.jpg',
     emoji: '🍋',
     color: '#417a92',
     tags: ['Scenic', 'Romantic'],
@@ -139,6 +154,7 @@ export const initialTrips = [
     country: 'France',
     dateLabel: 'Nov 15 – 17, 2026',
     startDate: '2026-11-15',
+    photo: '/destinations/paris.jpg',
     endDate: '2026-11-17',
     days: 3,
     travelers: 1,
@@ -161,6 +177,7 @@ export const initialTrips = [
     country: 'Japan',
     dateLabel: 'Mar 12 – 14, 2027',
     startDate: '2027-03-12',
+    photo: '/destinations/kyoto.jpg',
     endDate: '2027-03-14',
     days: 3,
     travelers: 2,
@@ -183,6 +200,7 @@ export const initialTrips = [
     country: 'Indonesia',
     dateLabel: 'Apr 04 – 05, 2027',
     startDate: '2027-04-04',
+    photo: '/destinations/bali.jpg',
     endDate: '2027-04-05',
     days: 2,
     travelers: 2,
@@ -211,7 +229,7 @@ export function findDestination(value = '') {
   const normalized = value.toLowerCase()
   const found = destinationCatalog.find((destination) => normalized.includes(destination.city.toLowerCase()))
   if (found) return found
-  if (normalized.includes('paris')) return { city: 'Paris', country: 'France', className: 'scene-paris', emoji: '✦', color: '#6a6fa7', tags: ['Food & cafés', 'Art & culture'], blurb: 'A beautiful balance of classic landmarks and local discoveries.' }
+  if (normalized.includes('paris')) return { city: 'Paris', country: 'France', className: 'scene-paris', photo: '/destinations/paris.jpg', emoji: '✦', color: '#6a6fa7', tags: ['Food & cafés', 'Art & culture'], blurb: 'A beautiful balance of classic landmarks and local discoveries.' }
   return { city: value.split(',')[0].trim() || 'New adventure', country: value.split(',')[1]?.trim() || 'Somewhere beautiful', className: 'scene-generic', emoji: '✦', color: '#66788f', tags: ['Local experiences'], blurb: 'A flexible, thoughtful route shaped around the way you want to travel.' }
 }
 
@@ -253,6 +271,7 @@ export function makeGeneratedTrip(preferences) {
     status: 'upcoming',
     saved: true,
     className: destination.className,
+    photo: destination.photo,
     emoji: destination.emoji,
     weather: '18° / 11°',
     weatherLabel: 'Comfortable',
